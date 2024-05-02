@@ -276,7 +276,7 @@ MonoBehaviour:
   UseDefaultMecanim: 1
   PerformAnimatorSanityChecks: 1
   DisableAnimatorLogs: 0
-  CharacterModel: {fileID: 0}
+  CharacterModel: {fileID: 1891293811287363758}
   CameraTarget: {fileID: 0}
   CameraTargetSpeed: 5
   AdditionalAbilityNodes: []

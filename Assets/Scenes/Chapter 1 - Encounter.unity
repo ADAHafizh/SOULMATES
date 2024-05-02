@@ -1009,7 +1009,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DampTime: 0.2
-  OrthoMinSize: 6.5
+  OrthoMinSize: 7
   OrthoScreenEdgeBuffer: 4
   MinPosition: {x: 0, y: 0, z: 0}
   MaxPosition: {x: 0, y: 0, z: 0}
