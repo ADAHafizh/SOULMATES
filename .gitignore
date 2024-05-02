@@ -73,10 +73,6 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
 # Garbage: 
-./vscode
+.vscode/
 .vsconfig
 .DS_Store
-
-# ConfigEngine: 
-/[Aa]ssets/CorgiEngine/
-/[Aa]ssets/CorgiEngine.meta
