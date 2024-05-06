@@ -3,6 +3,10 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 using MoreMountains.Tools;
 
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
 namespace MoreMountains.CorgiEngine
 {
 	/// <summary>
@@ -38,6 +42,16 @@ namespace MoreMountains.CorgiEngine
 			// we trigger an unPause event for the GameManager (and potentially other classes)
 			//CorgiEngineEvent.Trigger(CorgiEngineEventTypes.UnPause);
 			//LoadingSceneManager.LoadScene(SceneManager.GetActiveScene().name);
-		}		
+		}
+
+		//This function will allow the user to quit the game. 
+		public void ExitGame()
+		{
+		#if UNITY_EDITOR
+			EditorApplication.ExitPlaymode();
+		#else
+        	Application.Quit();  
+		#endif
+		}
 	}
 }
