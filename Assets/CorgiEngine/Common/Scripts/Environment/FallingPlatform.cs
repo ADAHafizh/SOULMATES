@@ -3,13 +3,13 @@ using System.Collections;
 using MoreMountains.Tools;
 
 namespace MoreMountains.CorgiEngine
-{	
+{
 	/// <summary>
 	/// Add this script to a platform and it'll fall down when walked upon by a playable character
 	/// Add an AutoRespawn component to your platform and it'll get reset when your character dies
 	/// </summary>
 	[AddComponentMenu("Corgi Engine/Environment/Falling Platform")]
-	public class FallingPlatform : CorgiMonoBehaviour 
+	public class FallingPlatform : CorgiMonoBehaviour
 	{
 		/// the time (in seconds) before the fall of the platform
 		[Tooltip("the time (in seconds) before the fall of the platform")]
@@ -21,16 +21,12 @@ namespace MoreMountains.CorgiEngine
 		[Tooltip("the tolerance to apply when comparing the relative positions of the falling platform and ")]
 		public float Tolerance = 0.1f;
 		/// if this is true, the platform will only fall if the colliding character is above the platform 
-		[Tooltip("if this is true, the platform will only fall if the colliding character is above the platform")]		
+		[Tooltip("if this is true, the platform will only fall if the colliding character is above the platform")]
 		public bool RequiresCharacterAbove = true;
-
-		[Tooltip("the time (in seconds) after which the platform resets to its original position")]
-		public float TimeBeforeReset = 5f; // Time after which the platform should reset
-		protected float _resetTimer; // Timer to track the reset time
 
 		// private stuff
 		protected Animator _animator;
-		protected bool _shaking=false;
+		protected bool _shaking = false;
 		protected Vector2 _newPosition;
 		protected Bounds _bounds;
 		protected Collider2D _collider2D;
@@ -44,7 +40,7 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		protected virtual void Start()
 		{
-			Initialization ();
+			Initialization();
 		}
 
 		/// <summary>
@@ -54,49 +50,33 @@ namespace MoreMountains.CorgiEngine
 		{
 			// we get the animator
 			_animator = this.gameObject.GetComponent<Animator>();
-			_collider2D = this.gameObject.GetComponent<Collider2D> ();
-			_autoRespawn = this.gameObject.GetComponent<AutoRespawn> ();
+			_collider2D = this.gameObject.GetComponent<Collider2D>();
+			_autoRespawn = this.gameObject.GetComponent<AutoRespawn>();
 			_bounds = LevelManager.Instance.LevelBounds;
 			_initialPosition = this.transform.position;
 			_timer = TimeBeforeFall;
-			_resetTimer = TimeBeforeReset;
-
 		}
-		
+
 		/// <summary>
 		/// This is called every frame.
 		/// </summary>
 		protected virtual void FixedUpdate()
 		{
+			// we send our various states to the animator.		
 			UpdateAnimator();
 
 			if (_timer < 0)
 			{
-				if (_collider2D.enabled) // Check if the collider is enabled
-				{
-					_collider2D.enabled = false; // Disable the collider when the platform starts to fall
-				}
-
 				_newPosition = new Vector2(0, -FallSpeed * Time.deltaTime);
+
 				transform.Translate(_newPosition, Space.World);
 
 				if (transform.position.y < _bounds.min.y)
 				{
 					DisableFallingPlatform();
 				}
-
-				// Reset timer countdown once platform has fallen
-				if (_resetTimer > 0)
-				{
-					_resetTimer -= Time.deltaTime;
-				}
-				else
-				{
-					ResetPlatformPosition();
-				}
 			}
 		}
-
 
 		/// <summary>
 		/// Disables the falling platform. We're not destroying it, so we can revive it on respawn
@@ -105,13 +85,13 @@ namespace MoreMountains.CorgiEngine
 		{
 			if (_autoRespawn == null)
 			{
-				this.gameObject.SetActive (false);			
+				this.gameObject.SetActive(false);
 			}
 			else
 			{
-				_autoRespawn.Kill ();				
+				_autoRespawn.Kill();
 			}
-			this.transform.position = _initialPosition;		
+			this.transform.position = _initialPosition;
 			_timer = TimeBeforeFall;
 			_shaking = false;
 		}
@@ -120,13 +100,13 @@ namespace MoreMountains.CorgiEngine
 		/// Updates the block's animator.
 		/// </summary>
 		protected virtual void UpdateAnimator()
-		{				
-			if (_animator!=null)
+		{
+			if (_animator != null)
 			{
-				_animator.SetBool("Shaking", _shaking);	
+				_animator.SetBool("Shaking", _shaking);
 			}
 		}
-		
+
 		/// <summary>
 		/// Triggered when a CorgiController touches the platform
 		/// </summary>
@@ -136,8 +116,8 @@ namespace MoreMountains.CorgiEngine
 			CorgiController controller = collider.GetComponent<CorgiController>();
 			if (controller == null)
 				return;
-			
-			if (TimeBeforeFall>0)
+
+			if (TimeBeforeFall > 0)
 			{
 				bool canShake = false;
 
@@ -147,7 +127,7 @@ namespace MoreMountains.CorgiEngine
 					if (controller.ColliderBottomPosition.y >= _platformTopY - Tolerance)
 					{
 						canShake = true;
-					}	
+					}
 				}
 				else
 				{
@@ -159,7 +139,7 @@ namespace MoreMountains.CorgiEngine
 					_timer -= Time.deltaTime;
 					_shaking = true;
 				}
-			}	
+			}
 			else
 			{
 				_shaking = false;
@@ -171,19 +151,18 @@ namespace MoreMountains.CorgiEngine
 		/// <param name="controller">The corgi controller that collides with the platform.</param>
 		protected virtual void OnTriggerExit2D(Collider2D collider)
 		{
-			CorgiController controller=collider.GetComponent<CorgiController>();
-			if (controller==null)
+			CorgiController controller = collider.GetComponent<CorgiController>();
+			if (controller == null)
 				return;
-			
-			_shaking=false;
+
+			_shaking = false;
 		}
 
 		protected virtual void OnRevive()
 		{
-			this.transform.position = _initialPosition;		
+			this.transform.position = _initialPosition;
 			_timer = TimeBeforeFall;
 			_shaking = false;
-			ResetPlatformPosition();
 		}
 
 		/// <summary>
@@ -191,7 +170,7 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		/// <param name="checkpoint">Checkpoint.</param>
 		/// <param name="player">Player.</param>
-		protected virtual void OnEnable ()
+		protected virtual void OnEnable()
 		{
 			if (gameObject.MMGetComponentNoAlloc<AutoRespawn>() != null)
 			{
@@ -204,18 +183,7 @@ namespace MoreMountains.CorgiEngine
 			if (_autoRespawn != null)
 			{
 				_autoRespawn.OnRevive -= OnRevive;
-			}			
+			}
 		}
-
-		protected virtual void ResetPlatformPosition()
-		{
-			this.transform.position = _initialPosition;
-			_timer = TimeBeforeFall;
-			_resetTimer = TimeBeforeReset;
-			_shaking = false;
-			this.gameObject.SetActive(true);
-			_collider2D.enabled = true; // Re-enable the collider when the platform resets
-		}
-
 	}
 }

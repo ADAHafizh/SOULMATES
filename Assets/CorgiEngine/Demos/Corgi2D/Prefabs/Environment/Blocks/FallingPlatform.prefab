@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 9563706}
   - component: {fileID: 6183158}
   - component: {fileID: 11490830}
+  - component: {fileID: 6558442978491924089}
   m_Layer: 8
   m_Name: FallingPlatform
   m_TagString: Untagged
@@ -165,8 +166,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ea2ea465c9684f96b42d2d13eefd088, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimeBeforeFall: 0.4
-  FallSpeed: 3.5
+  TimeBeforeFall: 0.2
+  FallSpeed: 4
   Tolerance: 0.1
   RequiresCharacterAbove: 1
-  TimeBeforeReset: 5
+--- !u!114 &6558442978491924089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 135928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df1508296b0904b1ba069c225eb6482a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RespawnOnPlayerRespawn: 1
+  RepositionToInitOnPlayerRespawn: 0
+  DisableOnKill: 1
+  AutoRespawnDuration: 2
+  AutoRespawnAmount: 1
+  AutoRespawnRemainingAmount: 3
+  IgnoreCheckpointsAlwaysRespawn: 1
+  AssociatedCheckpoints: []
+  RespawnFeedback: {fileID: 0}
