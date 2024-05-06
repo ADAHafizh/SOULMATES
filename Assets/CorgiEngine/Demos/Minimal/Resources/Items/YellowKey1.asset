@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 56bfaa6641535b642bc1b478c9d3c065, type: 3}
-  m_Name: YellowKey
+  m_Name: YellowKey1
   m_EditorClassIdentifier: 
-  ItemID: YellowKey
+  ItemID: YellowKey1
   TargetInventoryName: MainInventory
   ForceSlotIndex: 0
   TargetIndex: 0

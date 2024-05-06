@@ -18,9 +18,13 @@ namespace MoreMountains.CorgiEngine
 		/// whether this zone actually requires a key
 		[Tooltip("whether this zone actually requires a key")]
 		public bool RequiresKey = true;
+		[Tooltip("whether this zone requires a second key")]
+		public bool RequiresSecondKey = false;
 		/// the key ID, that will be checked against the existence (or not) of a key of the same name in the player's inventory
 		[Tooltip("the key ID, that will be checked against the existence (or not) of a key of the same name in the player's inventory")]
 		public string KeyID;
+		[Tooltip("the second key ID, that will be checked against the existence (or not) of a key of the same name in the player's inventory")]
+		public string SecondKeyID;  // Add this line to declare a second key
 		/// the method that should be triggered when the key is used
 		[Tooltip("the method that should be triggered when the key is used")]
 		public UnityEvent KeyAction;
@@ -44,7 +48,7 @@ namespace MoreMountains.CorgiEngine
 		{
 			_collidingObject = collider;
 			base.OnTriggerEnter2D (collider);
-		}	
+		}
 
 		/// <summary>
 		/// When the button is pressed, we check if we have a key in our inventory
@@ -66,24 +70,39 @@ namespace MoreMountains.CorgiEngine
 				{
 					PromptError();
 					return;
-				}	
+				}
 
-				_keyList.Clear ();
-				_keyList = characterInventory.MainInventory.InventoryContains (KeyID);
+				// Check for the first key
+				_keyList.Clear();
+				_keyList = characterInventory.MainInventory.InventoryContains(KeyID);
 				if (_keyList.Count == 0)
 				{
 					PromptError();
 					return;
 				}
-				else
+
+				// Optionally check for a second key if required
+				if (RequiresSecondKey)
 				{
-					base.TriggerButtonAction (instigator);
+					List<int> secondKeyList = characterInventory.MainInventory.InventoryContains(SecondKeyID);
+					if (secondKeyList.Count == 0)
+					{
+						PromptError();
+						return;
+					}
+					characterInventory.MainInventory.UseItem(SecondKeyID);  
+				}
+
+				// If it's a door that only needs one key and not the second then we can use. 
+				if(RequiresKey && !RequiresSecondKey) {
 					characterInventory.MainInventory.UseItem(KeyID);
 				}
 			}
-			TriggerKeyAction ();
-			ActivateZone ();
+
+			TriggerKeyAction();
+			ActivateZone();
 		}
+
 
 		/// <summary>
 		/// Calls the method associated to the key action
