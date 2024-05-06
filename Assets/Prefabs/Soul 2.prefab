@@ -276,6 +276,7 @@ GameObject:
   - component: {fileID: -5917701580203150049}
   - component: {fileID: 6511117376192028070}
   - component: {fileID: 3697156817952176045}
+  - component: {fileID: 6405311621439850943}
   m_Layer: 9
   m_Name: Soul 2
   m_TagString: Player
@@ -819,6 +820,18 @@ MonoBehaviour:
   OnlyDamageMaster: 1
   KillOnMasterHealthDeath: 0
   TargetDamageResistanceProcessor: {fileID: 0}
+--- !u!210 &6405311621439850943
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4122023322246531931}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 263
+  m_SortAtRoot: 0
 --- !u!1 &5314137314497078749
 GameObject:
   m_ObjectHideFlags: 0
