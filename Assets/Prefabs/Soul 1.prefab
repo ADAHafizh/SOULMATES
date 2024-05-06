@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 8859130961469814321}
   - component: {fileID: -1269513028082411056}
   - component: {fileID: -4398416882208670848}
+  - component: {fileID: 3297036285062754705}
   m_Layer: 9
   m_Name: Soul 1
   m_TagString: Player
@@ -486,6 +487,35 @@ MonoBehaviour:
   AutoAddItemsMainInventory: []
   AutoAddItemsHotbar: []
   AutoEquipWeapon: {fileID: 0}
+--- !u!114 &3297036285062754705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1891293811287363758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d66436e6d24d864b98c208398356163, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AbilityStartFeedbacks: {fileID: 0}
+  AbilityStopFeedbacks: {fileID: 0}
+  AbilityPermitted: 1
+  BlockingMovementStates: 
+  BlockingConditionStates: 
+  BlockingWeaponStates: 
+  SubjectToGravityPoints: 1
+  SubjectToGravityZones: 1
+  ReverseHorizontalInputWhenUpsideDown: 0
+  ReverseVerticalInputWhenUpsideDown: 0
+  ReverseInputOnGravityPoints: 0
+  InitialGravityAngle: 0
+  RotationSpeed: 0
+  InactiveBufferDuration: 0.1
+  TransitionForcesMode: 0
+  ResetCharacterStateOnGravityChange: 1
+  DrawDebugGravityArrow: 1
 --- !u!1 &5898961290944772048
 GameObject:
   m_ObjectHideFlags: 0
