@@ -24,6 +24,10 @@ namespace MoreMountains.CorgiEngine
 		[Tooltip("if this is true, the platform will only fall if the colliding character is above the platform")]		
 		public bool RequiresCharacterAbove = true;
 
+		[Tooltip("the time (in seconds) after which the platform resets to its original position")]
+		public float TimeBeforeReset = 5f; // Time after which the platform should reset
+		protected float _resetTimer; // Timer to track the reset time
+
 		// private stuff
 		protected Animator _animator;
 		protected bool _shaking=false;
@@ -55,28 +59,44 @@ namespace MoreMountains.CorgiEngine
 			_bounds = LevelManager.Instance.LevelBounds;
 			_initialPosition = this.transform.position;
 			_timer = TimeBeforeFall;
+			_resetTimer = TimeBeforeReset;
+
 		}
 		
 		/// <summary>
 		/// This is called every frame.
 		/// </summary>
 		protected virtual void FixedUpdate()
-		{		
-			// we send our various states to the animator.		
-			UpdateAnimator ();		
-			
+		{
+			UpdateAnimator();
+
 			if (_timer < 0)
 			{
+				if (_collider2D.enabled) // Check if the collider is enabled
+				{
+					_collider2D.enabled = false; // Disable the collider when the platform starts to fall
+				}
+
 				_newPosition = new Vector2(0, -FallSpeed * Time.deltaTime);
-				                           
-				transform.Translate(_newPosition,Space.World);
-				
+				transform.Translate(_newPosition, Space.World);
+
 				if (transform.position.y < _bounds.min.y)
 				{
-					DisableFallingPlatform ();
+					DisableFallingPlatform();
+				}
+
+				// Reset timer countdown once platform has fallen
+				if (_resetTimer > 0)
+				{
+					_resetTimer -= Time.deltaTime;
+				}
+				else
+				{
+					ResetPlatformPosition();
 				}
 			}
 		}
+
 
 		/// <summary>
 		/// Disables the falling platform. We're not destroying it, so we can revive it on respawn
@@ -163,6 +183,7 @@ namespace MoreMountains.CorgiEngine
 			this.transform.position = _initialPosition;		
 			_timer = TimeBeforeFall;
 			_shaking = false;
+			ResetPlatformPosition();
 		}
 
 		/// <summary>
@@ -185,5 +206,16 @@ namespace MoreMountains.CorgiEngine
 				_autoRespawn.OnRevive -= OnRevive;
 			}			
 		}
+
+		protected virtual void ResetPlatformPosition()
+		{
+			this.transform.position = _initialPosition;
+			_timer = TimeBeforeFall;
+			_resetTimer = TimeBeforeReset;
+			_shaking = false;
+			this.gameObject.SetActive(true);
+			_collider2D.enabled = true; // Re-enable the collider when the platform resets
+		}
+
 	}
 }
