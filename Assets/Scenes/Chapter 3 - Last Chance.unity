@@ -44579,7 +44579,7 @@ SpriteRenderer:
   m_Size: {x: 3.15, y: 3.78}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &473994202
@@ -56939,7 +56939,7 @@ Tilemap:
       - {fileID: 21300002, guid: 53835a543eadc4ff8b2955079199b882, type: 3}
       - {fileID: 21300010, guid: 53835a543eadc4ff8b2955079199b882, type: 3}
       - {fileID: 21300012, guid: 53835a543eadc4ff8b2955079199b882, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 28, y: -13, z: 0}
@@ -57049,7 +57049,7 @@ Tilemap:
       - {fileID: 21300002, guid: 53835a543eadc4ff8b2955079199b882, type: 3}
       - {fileID: 21300010, guid: 53835a543eadc4ff8b2955079199b882, type: 3}
       - {fileID: 21300012, guid: 53835a543eadc4ff8b2955079199b882, type: 3}
-      m_AnimationSpeed: 5.0000005
+      m_AnimationSpeed: 5
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 49, y: -13, z: 0}
@@ -57550,7 +57550,7 @@ Tilemap:
       - {fileID: 21300002, guid: 53835a543eadc4ff8b2955079199b882, type: 3}
       - {fileID: 21300010, guid: 53835a543eadc4ff8b2955079199b882, type: 3}
       - {fileID: 21300012, guid: 53835a543eadc4ff8b2955079199b882, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 32, y: -12, z: 0}
@@ -57632,7 +57632,7 @@ Tilemap:
       - {fileID: 21300006, guid: 53835a543eadc4ff8b2955079199b882, type: 3}
       - {fileID: 21300008, guid: 53835a543eadc4ff8b2955079199b882, type: 3}
       - {fileID: 21300006, guid: 53835a543eadc4ff8b2955079199b882, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 58, y: -12, z: 0}
@@ -58318,6 +58318,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerID: Player1
   Content:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   InventoryType: 0
   TargetTransform: {fileID: 0}
@@ -62248,7 +62267,7 @@ SpriteRenderer:
   m_Size: {x: 2.55, y: 2.05}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &2043082720
