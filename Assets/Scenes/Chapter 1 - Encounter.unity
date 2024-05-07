@@ -7069,6 +7069,7 @@ GameObject:
   - component: {fileID: 661527012}
   - component: {fileID: 661527011}
   - component: {fileID: 661527010}
+  - component: {fileID: 661527013}
   m_Layer: 5
   m_Name: SignPost - INTRO
   m_TagString: Untagged
@@ -7159,6 +7160,18 @@ Canvas:
   m_SortingLayerID: -1053558941
   m_SortingOrder: 5
   m_TargetDisplay: 0
+--- !u!210 &661527013
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661527008}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortAtRoot: 0
 --- !u!1 &694007860
 GameObject:
   m_ObjectHideFlags: 0

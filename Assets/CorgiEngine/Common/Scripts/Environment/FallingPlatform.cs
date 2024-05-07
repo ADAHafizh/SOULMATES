@@ -62,13 +62,17 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		protected virtual void FixedUpdate()
 		{
-			// we send our various states to the animator.		
+			// we send our various states to the animator.
 			UpdateAnimator();
 
 			if (_timer < 0)
 			{
-				_newPosition = new Vector2(0, -FallSpeed * Time.deltaTime);
+				if (_collider2D.enabled)  // Check if the collider is still enabled
+				{
+					_collider2D.enabled = false;  // Disable the collider when it starts to fall
+				}
 
+				_newPosition = new Vector2(0, -FallSpeed * Time.deltaTime);
 				transform.Translate(_newPosition, Space.World);
 
 				if (transform.position.y < _bounds.min.y)
@@ -78,9 +82,6 @@ namespace MoreMountains.CorgiEngine
 			}
 		}
 
-		/// <summary>
-		/// Disables the falling platform. We're not destroying it, so we can revive it on respawn
-		/// </summary>
 		protected virtual void DisableFallingPlatform()
 		{
 			if (_autoRespawn == null)
@@ -94,7 +95,9 @@ namespace MoreMountains.CorgiEngine
 			this.transform.position = _initialPosition;
 			_timer = TimeBeforeFall;
 			_shaking = false;
+			_collider2D.enabled = true;  // Re-enable the collider when the platform is reset
 		}
+
 
 		/// <summary>
 		/// Updates the block's animator.
