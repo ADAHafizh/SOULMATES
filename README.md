@@ -12,7 +12,8 @@ ps, file to big for github lmao. We'll just upload the file executable here late
 
 This control scheme emphasizes the game's focus on teamwork and communication, as players must coordinate their actions closely to solve puzzles and advance the story. The dual-player mode is essential for the narrative and mechanics of "Soulmates". Players are encouraged to work together in real-time, making decisions that affect the game's outcome. This setup enhances the game's thematic elements of companionship and togetherness, providing a unique interactive experience. This is central to the concept of "Soulmates", ensuring players can experience the full depth of the game's cooperative and storytelling potential.
 
-#### Level Design
+### Level Design
+#### 3 Chapters
 ![Design](https://github.com/ADAHafizh/SOULMATES/blob/main/LevelDesignImage.png)
 
 ### Characters
