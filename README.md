@@ -40,3 +40,8 @@ This control scheme emphasizes the game's focus on teamwork and communication, a
 
 #### Why Play "Soulmates"?
 "Soulmates" offers players a unique blend of engaging puzzles and a compelling story. It emphasizes the importance of love, companionship, and selflessness, providing a rich, cooperative gaming experience.
+
+#### Challenges Encountered:
+
+* Complexity of Puzzles: Some feedback indicated that certain puzzles might have been too complex or not intuitive enough, occasionally leading to player frustration rather than collaboration. This highlighted a potential misalignment between puzzle difficulty and player expectations.
+* Technical Limitations: Our initial ambition to include more dynamic interactions and a richer environmental storytelling was somewhat difficult to implement due technical and time constraints.
