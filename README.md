@@ -38,10 +38,12 @@ This control scheme emphasizes the game's focus on teamwork and communication, a
 * Seeing the kingdom in danger, the Swordswoman returns.
 * Together, they battle the dragon but face challenges due to their unresolved feelings and miscommunication, leading to tragic consequences.
 
-#### Why Play "Soulmates"?
+### Why Play "Soulmates"?
 "Soulmates" offers players a unique blend of engaging puzzles and a compelling story. It emphasizes the importance of love, companionship, and selflessness, providing a rich, cooperative gaming experience.
 
-#### Challenges Encountered:
+### Process and Implementation
+The development of "Soulmates" started by defining a clear vision: to create a cooperative puzzle-solving game that emphasized storytelling. The core idea was to intertwine the game mechanics with the narrative, making each puzzle a part of the unfolding story about two souls discovering their past. Cooperation is mandatory, with puzzles that cannot be solved by players acting independently. This enforces the theme of togetherness and mutual dependence. The game is set in a limbo-like world, chosen for its symbolic representation of the characters' state — between their past lives and their potential redemption. This setting supports the narrative. The decision was influenced by the desire to create a space that felt both mysterious and engaging, encouraging exploration and cooperation.
 
+### Challenges Encountered:
 * Complexity of Puzzles: Some feedback indicated that certain puzzles might have been too complex or not intuitive enough, occasionally leading to player frustration rather than collaboration. This highlighted a potential misalignment between puzzle difficulty and player expectations.
 * Technical Limitations: Our initial ambition to include more dynamic interactions and a richer environmental storytelling was somewhat difficult to implement due technical and time constraints.
