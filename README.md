@@ -3,6 +3,8 @@ ps, file to big for github lmao. We'll just upload the file executable here late
 
 -------------------
 
+## SOULMATES - The Only Way Out Is Together!
+
 ### Overview
 "Soulmates" is exclusively a two-player game, designed for both players to engage simultaneously on a single computer. The primary objective of the game is to foster teamwork and cooperative problem-solving as players guide the souls through their journey, discovering their identities and stories.
 
