@@ -47,3 +47,10 @@ The development of "Soulmates" started by defining a clear vision: to create a c
 ### Challenges Encountered:
 * Complexity of Puzzles: Some feedback indicated that certain puzzles might have been too complex or not intuitive enough, occasionally leading to player frustration rather than collaboration. This highlighted a potential misalignment between puzzle difficulty and player expectations.
 * Technical Limitations: Our initial ambition to include more dynamic interactions and a richer environmental storytelling was somewhat difficult to implement due technical and time constraints.
+
+### Playtest Assessment
+Due to time constraints during the game development process, "Soulmates" was playtested internally within our group.
+#### Some Insights Gained from Playtesting
+* Puzzle Complexity: The playtesting sessions revealed that sometimes the gameplay was a bit challenging, leading to frustration rather than fun or engagement. This feedback was crucial for adjusting the difficulty levels.
+* Platform Design: Highlighted the need for environments that are not only visually appealing but also functionally feasible to easier gameplay. The team worked on enhancing platform elements to make them more interactive and integral to the puzzle-solving process.
+* Story Clarity: One significant challenge identified was conveying the story effectively without relying on text, as internal group feedback suggested that players often skip reading text-based story elements in games. We decided to use visual storytelling through expressive character animations and environmental cues to make the narrative more accessible and understandable. This approach aimed to allow players to piece together the story naturally as they progressed through the game. These visuals could convey emotions, plot developments, and character backgrounds more effectively, making the story clear and engaging through purely visual means.
